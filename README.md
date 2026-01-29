@@ -1,117 +1,91 @@
-# Customer-Behaviour-Analysis
-**Project Overview**
+# Customer Behaviour Analysis
 
-This is a mini end-to-end data analytics project that analyzes customer shopping behaviour to uncover patterns, preferences, and trends. The project demonstrates how raw customer data can be transformed into meaningful insights using SQL for data extraction, Python for analysis, and Power BI for visualization. The goal is to extract actionable insights that help understand customer patterns, preferences, and trends.
+## 📌 Project Overview
+**Customer Behaviour Analysis** is a mini end-to-end data analytics project that transforms raw customer shopping data into meaningful insights using SQL for data extraction, Python for analysis, and Power BI for interactive visualization.
 
-The project integrates PostgreSQL, Python (Jupyter Notebook), and Power BI to demonstrate end-to-end data analytics skills.
+______________________________________________________________________________________________________________________________________________________________________________________________________________________
 
-**Project Components**
+## 🎯 Objective
+- Understand customer shopping patterns and preferences  
+- Perform exploratory data analysis on customer behaviour data  
+- Visualize insights using an interactive dashboard  
 
-1.**Data Source & Database (PostgreSQL)**
+_____________________________________________________________________________________________________________________________________________________________________________________________________________________
 
-Customer data is stored in a PostgreSQL database.
+## 🗂️ Project Components
 
-SQL queries are written to:
+### 1. Data Source & Database (PostgreSQL)
+- Customer data stored in a PostgreSQL database
+- SQL queries used to:
+  - Retrieve customer purchase records
+  - Filter relevant attributes
+  - Perform aggregations
+- File:
+  - `postgresSQL.sql`
 
-Retrieve customer purchase records
+---
 
-Filter relevant attributes
+### 2. Data Analysis (Python – Jupyter Notebook)
+- Data analysis performed using Python
+- Libraries used:
+  - `pandas`
+  - `numpy`
+  - `matplotlib`
+  - `seaborn`
+- Key steps:
+  1. Data loading
+  2. Data cleaning & preprocessing
+  3. Exploratory Data Analysis (EDA)
+  4. Identifying customer behaviour patterns
+- File:
+  - `Customer_Behaviour_Analysis.ipynb`
 
-Perform basic aggregations
+---
 
-**File used:**
+### 3. Data Visualization (Power BI)
+- Interactive Power BI dashboard created
+- Dashboard highlights:
+  - Customer purchasing trends
+  - Product and category preferences
+  - Behavioural patterns across segments
+- File:
+  - `customer behaviour dashboard.pbix`
 
-postgresSQL.sql
+_____________________________________________________________________________________________________________________________________________________________________________________________________________________
 
-Outcome: Clean and structured data ready for analysis.
+## 🔄 Project Workflow
+1. Extract data using SQL from PostgreSQL  
+2. Load and analyze data in Python  
+3. Perform EDA to identify trends and patterns  
+4. Generate insights from customer behaviour  
+5. Build interactive Power BI dashboard  
+6. Present insights visually  
 
-2.**Data Analysis (Python – Jupyter Notebook)**
-The extracted data is analyzed using Python.
+_____________________________________________________________________________________________________________________________________________________________________________________________________________________
 
-Libraries used include:
+## 🛠️ Tools & Technologies
+- **Database:** PostgreSQL  
+- **Language:** Python  
+- **IDE:** Jupyter Notebook  
+- **Visualization:** Power BI  
+- **Libraries:** pandas, numpy, matplotlib, seaborn  
 
-pandas – data manipulation
+---
 
-numpy – numerical operations
+## 📘 Key Learnings
+- End-to-end data analytics workflow  
+- SQL and Python integration  
+- Customer behaviour analysis techniques  
+- Data storytelling using Power BI  
 
-matplotlib / seaborn – exploratory visualizations
+---
 
-Key steps performed:
+## ▶️ How to Run the Project
+1. Execute SQL queries from `postgresSQL.sql` in PostgreSQL  
+2. Open and run `Customer_Behaviour_Analysis.ipynb`  
+3. Review insights and analysis  
+4. Open `customer behaviour dashboard.pbix` in Power BI Desktop  
 
-Data loading
+---
 
-Data cleaning and preprocessing
-
-Exploratory Data Analysis (EDA)
-
-Identifying customer behaviour patterns
-
-File used:
-
-Customer_Behaviour_Analysis.ipynb
-
-Outcome: Meaningful insights derived from customer behaviour data.
-
-3. **Data Visualization (Power BI Dashboard)**
-An interactive Power BI dashboard is created to visualize insights.
-
-Dashboard highlights:
-
-Customer purchasing trends
-
-Product/category preferences
-
-Behavioural patterns across segments
-
-File used:
-
-customer behaviour dashboard.pbix
-
-Outcome: User-friendly dashboard for decision-making.
-
-**Project Workflow (Step-by-Step)**
-
-Query customer data from PostgreSQL using SQL
-
-Export/query results for analysis
-
-Perform data cleaning and EDA in Python
-
-Generate insights and trends
-
-Build an interactive Power BI dashboard
-
-Present findings visually
-
-Tools & Technologies Used
-
-Database: PostgreSQL
-
-Programming Language: Python
-
-IDE: Jupyter Notebook
-
-Visualization Tool: Power BI
-
-Libraries: pandas, numpy, matplotlib, seaborn
-
-**Key Learnings**
-
-End-to-end data analytics workflow
-
-SQL-to-Python data integration
-
-Customer behaviour analysis techniques
-
-Dashboard-driven storytelling with Power BI
-
-How to Use This Project
-
-Run SQL queries from postgresSQL.sql on a PostgreSQL database
-
-Open and execute Customer_Behaviour_Analysis.ipynb
-
-Explore insights and outputs
-
-Open customer behaviour dashboard.pbix in Power BI Desktop
 
