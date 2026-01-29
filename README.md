@@ -25,7 +25,7 @@ postgresSQL.sql
 
 Outcome: Clean and structured data ready for analysis.
 
-2. **Data Analysis (Python – Jupyter Notebook)**
+2.**Data Analysis (Python – Jupyter Notebook)**
 The extracted data is analyzed using Python.
 
 Libraries used include:
