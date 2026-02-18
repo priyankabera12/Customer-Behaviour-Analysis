@@ -6,51 +6,144 @@
 ______________________________________________________________________________________________________________________________________________________________________________________________________________________
 
 ## 🎯 Objective
-- Understand customer shopping patterns and preferences  
-- Perform exploratory data analysis on customer behaviour data  
-- Visualize insights using an interactive dashboard  
+Understand customer shopping patterns and revenue drivers
+
+Identify high-value customers and repeat buyers
+
+Analyze the impact of discounts, shipping type, and demographics
+
+Perform trend and segmentation analysis
+
+Build an interactive dashboard for decision-making
 
 _____________________________________________________________________________________________________________________________________________________________________________________________________________________
 
 ## 🗂️ Project Components
 
-### 1. Data Source & Database (PostgreSQL)
-- Customer data stored in a PostgreSQL database
-- SQL queries used to:
-  - Retrieve customer purchase records
-  - Filter relevant attributes
-  - Perform aggregations
-- File:
-  - `postgresSQL.sql`
+### 1️⃣ Data Source & Database (PostgreSQL)
 
----
+Customer transactional data stored in PostgreSQL.
 
-### 2. Data Analysis (Python – Jupyter Notebook)
-- Data analysis performed using Python
-- Libraries used:
-  - `pandas`
-  - `numpy`
-  - `matplotlib`
-  - `seaborn`
-- Key steps:
-  1. Data loading
-  2. Data cleaning & preprocessing
-  3. Exploratory Data Analysis (EDA)
-  4. Identifying customer behaviour patterns
-- File:
-  - `Customer_Behaviour_Analysis.ipynb`
+SQL used for:
 
----
+Revenue analysis (gender, category, shipping type)
 
-### 3. Data Visualization (Power BI)
-- Interactive Power BI dashboard created
-- Dashboard highlights:
-  - Customer purchasing trends
-  - Product and category preferences
-  - Behavioural patterns across segments
-- File:
-  - `customer behaviour dashboard.pbix`
+Discount impact evaluation
 
+Top product identification
+
+Customer segmentation (New, Returning, Loyal)
+
+Month-over-Month revenue growth
+
+Customer Lifetime Value (CLV)
+
+Revenue contribution percentage
+
+RFM segmentation
+
+Weekday vs Weekend revenue comparison
+
+Repeat buyer percentage
+
+Revenue concentration analysis (Pareto logic)
+
+File:
+postgresSQL.sql
+2️⃣ Advanced SQL Analysis Implemented
+📈 Revenue & KPI Analysis
+
+Total revenue by gender
+
+Average Order Value (AOV)
+
+Revenue by subscription status
+
+Revenue by shipping type
+
+Payment method performance
+
+📊 Trend Analysis
+
+Monthly revenue growth rate (MoM%)
+
+Weekday vs Weekend revenue comparison
+
+👥 Customer Analytics
+
+Customer Lifetime Value (CLV)
+
+High-value customers identification
+
+Repeat buyer percentage
+
+Frequency-based segmentation
+
+RFM segmentation (Recency, Frequency, Monetary)
+
+🛍️ Product Performance
+
+Top-rated products
+
+Top 5 products by discount rate
+
+Top 3 products per category
+
+Repeat purchase ratio per product
+3️⃣ Data Analysis (Python – Jupyter Notebook)
+
+Data analysis performed using Python to further explore patterns beyond SQL.
+
+Libraries Used:
+
+pandas
+
+numpy
+
+matplotlib
+
+seaborn
+
+Key Steps:
+
+Data loading from SQL export
+
+Data cleaning & preprocessing
+
+Handling missing values
+
+Feature engineering
+
+Exploratory Data Analysis (EDA)
+
+Distribution analysis
+
+Correlation analysis
+
+Behavioural pattern identification
+
+File:
+Customer_Behaviour_Analysis.ipynb
+4️⃣ Data Visualization (Power BI)
+
+Interactive dashboard built for business storytelling.
+
+Dashboard Highlights:
+
+Revenue trends over time
+
+Customer segmentation breakdown
+
+Category contribution %
+
+Discount impact analysis
+
+High-value customer insights
+
+Shipping performance comparison
+
+File:
+customer behaviour dashboard.pbix
 _____________________________________________________________________________________________________________________________________________________________________________________________________________________
 
 ## 🔄 Project Workflow
@@ -73,12 +166,19 @@ ________________________________________________________________________________
 ---
 
 ## 📘 Key Learnings
-- End-to-end data analytics workflow  
-- SQL and Python integration  
-- Customer behaviour analysis techniques  
-- Data storytelling using Power BI  
+End-to-end data analytics workflow
 
----
+Advanced SQL (CTEs, Window Functions, Aggregations)
+
+KPI-driven business analysis
+
+Customer segmentation strategies
+
+Revenue growth and retention analysis
+
+Data storytelling with dashboards
+
+Integration of SQL + Python + BI tools
 
 ## ▶️ How to Run the Project
 1. Execute SQL queries from `postgresSQL.sql` in PostgreSQL  
