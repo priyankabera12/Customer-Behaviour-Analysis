@@ -48,9 +48,9 @@ Repeat buyer percentage
 
 Revenue concentration analysis (Pareto logic)
 
-File:
-postgresSQL.sql
-2️⃣ Advanced SQL Analysis Implemented
+
+2️⃣ **Advanced SQL Analysis Implemented**
+
 📈 Revenue & KPI Analysis
 
 Total revenue by gender
@@ -90,7 +90,8 @@ Top 5 products by discount rate
 Top 3 products per category
 
 Repeat purchase ratio per product
-3️⃣ Data Analysis (Python – Jupyter Notebook)
+
+**3️⃣ Data Analysis (Python – Jupyter Notebook)**
 
 Data analysis performed using Python to further explore patterns beyond SQL.
 
@@ -124,7 +125,8 @@ Behavioural pattern identification
 
 File:
 Customer_Behaviour_Analysis.ipynb
-4️⃣ Data Visualization (Power BI)
+
+**4️⃣ Data Visualization (Power BI)**
 
 Interactive dashboard built for business storytelling.
 
