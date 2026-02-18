@@ -68,4 +68,119 @@ group by category, item_purchased
 select item_rank, category, item_purchased, total_orders
 from item_counts
 where item_rank <= 3;
+-----Q9) Calculate month-over-month revenue growth rate
+WITH monthly_revenue AS (
+    SELECT 
+        DATE_TRUNC('month', purchase_date) AS month,
+        SUM(purchase_amount) AS revenue
+    FROM customer
+    GROUP BY month
+)
+
+SELECT 
+    month,
+    revenue,
+    LAG(revenue) OVER (ORDER BY month) AS previous_month_revenue,
+    ROUND(
+        100 * (revenue - LAG(revenue) OVER (ORDER BY month)) 
+        / LAG(revenue) OVER (ORDER BY month),2
+    ) AS growth_percentage
+FROM monthly_revenue
+ORDER BY month;
+-----Q10) Top 10 customers by lifetime revenue
+
+SELECT 
+    customer_id,
+    COUNT(*) AS total_orders,
+    ROUND(SUM(purchase_amount),2) AS lifetime_revenue
+FROM customer
+GROUP BY customer_id
+ORDER BY lifetime_revenue DESC
+LIMIT 10;
+-----Q11) Percentage contribution of each category to total revenue
+
+WITH total_revenue AS (
+    SELECT SUM(purchase_amount) AS total FROM customer
+)
+
+SELECT 
+    category,
+    ROUND(SUM(purchase_amount),2) AS category_revenue,
+    ROUND(
+        100 * SUM(purchase_amount) / 
+        (SELECT total FROM total_revenue),2
+    ) AS revenue_percentage
+FROM customer
+GROUP BY category
+ORDER BY revenue_percentage DESC;
+-----Q12) Calculate Customer Lifetime Value
+
+SELECT 
+    customer_id,
+    ROUND(SUM(purchase_amount),2) AS lifetime_revenue,
+    ROUND(AVG(purchase_amount),2) AS avg_order_value,
+    COUNT(*) AS frequency
+FROM customer
+GROUP BY customer_id
+ORDER BY lifetime_revenue DESC;
+-----Q13) Revenue performance by shipping type
+
+SELECT 
+    shipping_type,
+    COUNT(*) AS total_orders,
+    ROUND(AVG(purchase_amount),2) AS avg_order_value,
+    ROUND(SUM(purchase_amount),2) AS total_revenue
+FROM customer
+GROUP BY shipping_type
+ORDER BY avg_order_value DESC;
+-----Q14) Repeat purchase ratio for each product
+
+SELECT 
+    item_purchased,
+    COUNT(*) AS total_sales,
+    COUNT(DISTINCT customer_id) AS unique_customers,
+    ROUND(
+        COUNT(*)::numeric / 
+        COUNT(DISTINCT customer_id),2
+    ) AS repeat_purchase_ratio
+FROM customer
+GROUP BY item_purchased
+ORDER BY repeat_purchase_ratio DESC;
+-----Q15) Basic RFM segmentation
+
+WITH rfm AS (
+SELECT 
+    customer_id,
+    MAX(purchase_date) AS last_purchase,
+    COUNT(*) AS frequency,
+    SUM(purchase_amount) AS monetary
+FROM customer
+GROUP BY customer_id
+)
+
+SELECT 
+    customer_id,
+    CURRENT_DATE - last_purchase AS recency_days,
+    frequency,
+    monetary,
+    CASE 
+        WHEN monetary > 1000 THEN 'High Value'
+        WHEN monetary BETWEEN 500 AND 1000 THEN 'Mid Value'
+        ELSE 'Low Value'
+    END AS segment
+FROM rfm
+ORDER BY monetary DESC;
+-----Q21) Revenue trend by weekday vs weekend
+
+SELECT 
+    CASE 
+        WHEN EXTRACT(DOW FROM purchase_date) IN (0,6) THEN 'Weekend'
+        ELSE 'Weekday'
+    END AS day_type,
+    ROUND(SUM(purchase_amount),2) AS total_revenue,
+    COUNT(*) AS total_orders
+FROM customer
+GROUP BY day_type;
+
+
 
